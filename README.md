@@ -66,9 +66,6 @@ python app.py --omniparser_server_url localhost:8000
 Navigate to the root folder `/OmniParser`:
 
 #### 4.1 Open Jupyter Notebook
-```sh
-jupyter notebook
-```
 
 #### 4.2 Open `demo.ipynb` and Click **Run All**
 
