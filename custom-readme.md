@@ -1,36 +1,77 @@
-Steps to run the new omni parser with out the need of docker. Yes we did it :)
+# Install Omni Parser without Docker
 
-1. Installation
+Yes, we did it! :)
 
-   1. Install conda and python
-      1.1 Create a venv omni
-      command: conda create -n "omni" python==3.12
-      1.2 Activate venv omni
-      command: conda activate omni
+## Steps to Run the New Omni Parser Without Docker
 
-   2. Clone the repo:
-      command: git clone https://github.com/ShreyX24/OmniParser.git
+### 1. Installation
 
-   3. install requirements (do not remove gradio)
-      command: pip install -r requirements.txt
+#### 1.1 Install Conda and Python
 
-      3.1 Removed torch and torchvision from requirements.txt, because you need to install the updated version manually
-      command: pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+- Create a virtual environment named `omni`:
+  ```sh
+  conda create -n "omni" python==3.12
+  ```
+- Activate the virtual environment:
+  ```sh
+  conda activate omni
+  ```
 
-      3.2 Intall Cuda Toolkit from Nvidia
-      Link: https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local
+#### 1.2 Clone the Repository
+```sh
+git clone https://github.com/ShreyX24/Custom-Omni.git
+```
 
-      3.3 Install jupyter
-      command pip install jupyter
+#### 1.3 Install Requirements (Do not remove Gradio)
+```sh
+pip install -r requirements.txt
+```
 
-2. Navigate to omnitool/omniparserserver and start the server
-   command (no there is no .py at the end of omniparserserver): python -m omniparserserver
+- **Note:** `torch` and `torchvision` have been removed from `requirements.txt`. Install the updated versions manually:
+  ```sh
+  pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+  ```
 
-3. Navigate to omnitool/gradio/app.py and start gradio
-   command: python app.py --omniparser_server_url localhost:8000
+- **Install CUDA Toolkit from NVIDIA**  
+  [Download CUDA Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=Windows&target_arch=x86_64&target_version=11&target_type=exe_local)
 
-(You're backend is up and running)
+- **Install Jupyter**
+  ```sh
+  pip install jupyter
+  ```
 
-4. Go to root folder i.e. /OmniParser
-   4.1 Open demo.ipynb in jupyter notebook
-   4.2 Click on Run all
+---
+
+### 2. Start Omni Parser Server
+Navigate to `omnitool/omniparserserver` and start the server:
+```sh
+python -m omniparserserver
+```
+
+*(Note: There is no `.py` at the end of `omnibackendserver`)*
+
+---
+
+### 3. Start Gradio UI
+Navigate to `omnitool/gradio/app.py` and start Gradio:
+```sh
+python app.py --omniparser_server_url localhost:8000
+```
+
+*(Your backend is up and running!)*
+
+---
+
+### 4. Run the Demo
+Navigate to the root folder `/OmniParser`:
+
+#### 4.1 Open Jupyter Notebook
+```sh
+jupyter notebook
+```
+
+#### 4.2 Open `demo.ipynb` and Click **Run All**
+
+---
+
+You're all set! 🎉
